@@ -77,3 +77,12 @@ The data preparation process for the loan default project involved multiple step
 ---
 
 This structured approach to data cleaning not only improves the readability and interpretability of the dataset but also prepares it effectively for downstream modeling tasks. By designing reusable and modular functions for each aspect of the cleaning process, the script emphasizes scalability and efficient handling of diverse data types, setting the foundation for robust analysis and model building. 
+
+
+### Skewness & Outlier Detection, Removal, and Transformation Techniques
+
+- **Impact of Skewed Data**: Skewed features can adversely affect models that assume normally distributed data, including linear regression, logistic regression, and many tree-based methods.
+- **Outliers and Variance**: Skewed distributions often result in outliers and high variance, potentially causing model instability. Addressing skewness is crucial for building more robust and accurate models.
+- **Identifying Skewness**: Used statistical tests (e.g., skewness, kurtosis) and visual methods (e.g., histograms, boxplots) to identify columns with significant skewness.
+- **Transformation Techniques**: Applied advanced techniques like `PowerTransformer` (Box-Cox or Yeo-Johnson), `QuantileTransformer`, and `RobustScaler` to improve the normality of skewed data.
+- **Combined Outlier Handling**: Implemented a combined approach using Interquartile Range (IQR) to remove extreme outliers, followed by Winsorization to cap residual outliers, and applied `RobustScaler` to scale data effectively, achieving a more balanced transformation.
